@@ -1,0 +1,326 @@
+html,
+body {
+  padding: 0 0;
+  margin: 0 auto;
+  background-color: #393E46;
+  scroll-behavior: smooth;
+  text-align: center;
+}
+
+/* Fonts
+font-family: 'Pacifico', cursive;
+font-family: 'Ubuntu', sans-serif;
+*/
+
+/* Animation */
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateX(10px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes append-animate {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Loading Page */
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6D9886;
+}
+
+/* Navbar */
+
+#navbar {
+  background-color: #eeeeee;
+  color: #000;
+
+}
+
+.navbar-container {
+  padding: 1% 15%;
+
+  animation: transitionIn 0.75s;
+}
+
+.navbar-text {
+  font-family: 'Pacifico', cursive;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.navbar-home {
+  text-decoration: none;
+  color: #000;
+  transition: all 0.5s;
+}
+
+.navbar-home:hover {
+  color: #6D9886;
+}
+
+.navbar-menu {
+  text-decoration: none;
+  color: #000;
+  padding: 0 1rem;
+  transition: all 0.5s;
+}
+
+.navbar-menu:hover {
+  color: #6D9886;
+}
+
+/* Play Dice Section */
+
+#play {
+  padding: 2% 30%;
+}
+
+.play-container {
+  margin: 3% auto;
+  background-color: #eeeeee;
+  border-radius: 20px;
+  padding: 3%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  animation: append-animate 0.75s;
+}
+
+.title {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 900;
+  text-align: center;
+  font-size: 1.5rem;
+  animation: append-animate 1.25s;
+}
+
+.dice-game-text {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+}
+
+/* .roll-text {
+  display: none;
+} */
+
+.player-one-win {
+  display: none;
+}
+
+.player-two-win {
+  display: none;
+}
+
+.draw {
+  display: none;
+}
+
+.rolling {
+  display: none;
+}
+
+.score {
+  display: none;
+}
+
+/* Dice */
+
+.dice-box {
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+  padding: 60px 30px;
+  border-radius: 20px;
+}
+
+.dice {
+  position: relative;
+  text-align: left;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg);
+  transition: transform 6s;
+  animation: rolling 4s;
+}
+
+.side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 5px solid #f6f3f0;
+  transform-style: preserve-3d;
+  background: linear-gradient(145deg, #dddbd8, #fff);
+}
+
+.side::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: #f6f3f0;
+  transform: translateZ(-1px);
+}
+
+.side::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #131210;
+}
+
+.one {
+  transform: translateZ(50px);
+}
+
+.two {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.three {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+.four {
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.five {
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.six {
+  transform: rotateX(180deg) translateZ(50px);
+}
+
+.one::after {
+  width: 30px;
+  height: 30px;
+  background-color: #f63330;
+  margin: -15px 0 0 -15px;
+}
+
+.two::after {
+  margin: -30px 0 0 -30px;
+  box-shadow: 40px 40px;
+}
+
+.three::after {
+  margin: -35px 0 0 -35px;
+  box-shadow: 25px 25px,
+    50px 50px;
+}
+
+.four::after {
+  margin: -30px 0 0 -30px;
+  box-shadow: 40px 0,
+    0 40px,
+    40px 40px;
+}
+
+.five::after {
+  margin: -36px 0 0 -36px;
+  box-shadow: 26px 26px,
+    52px 52px,
+    52px 0,
+    0 52px;
+}
+
+.six::after {
+  margin: -35px 0 0 -30px;
+  box-shadow: 40px 0,
+    0 25px,
+    40px 25px,
+    0 50px,
+    40px 50px;
+}
+
+/* Button to Roll */
+
+.btn-roll {
+  margin: 5% 2%;
+  text-align: center;
+}
+
+.roll {
+  cursor: pointer;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  padding: 2% 5%;
+  background-color: #F7F7F7;
+  border-radius: 5px;
+  border-color: #F7F7F7;
+  transition: all 0.2s;
+}
+
+.roll:hover {
+  background-color: #F7F7F7;
+  color: #6D9886
+}
+
+/* Rolling Animation */
+
+@keyframes rolling {
+  50% {
+    transform: rotateX(455deg) rotateY(55deg);
+  }
+}
+
+/* Player */
+
+.player {
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+  padding: 0 30px;
+}
+
+.player-name {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;
+}
+
+/* Media Query */
+
+@media (max-width: 1024px) {
+  #play {
+    padding: 3% 10px;
+  }
+
+  .dice-box {
+    display: grid;
+    grid-template-columns: auto auto;
+    place-items: center;
+    padding: 60px 0px;
+    border-radius: 20px;
+  }
+}
