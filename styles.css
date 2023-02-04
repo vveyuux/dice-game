@@ -1,10 +1,11 @@
 html,
 body {
-  padding: 0 0;
+  padding: 0;
   margin: 0 auto;
   background-color: #393E46;
   scroll-behavior: smooth;
   text-align: center;
+  box-sizing: border-box;
 }
 
 /* Fonts
@@ -13,18 +14,6 @@ font-family: 'Ubuntu', sans-serif;
 */
 
 /* Animation */
-
-@keyframes transitionIn {
-  from {
-    opacity: 0;
-    transform: translateX(10px)
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 @keyframes append-animate {
   from {
@@ -35,6 +24,14 @@ font-family: 'Ubuntu', sans-serif;
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+/* Rolling Animation */
+
+@keyframes rolling {
+  50% {
+    transform: rotateX(455deg) rotateY(55deg);
   }
 }
 
@@ -52,44 +49,21 @@ font-family: 'Ubuntu', sans-serif;
   background-color: #6D9886;
 }
 
-/* Navbar */
+/* Credit Section */
 
-#navbar {
-  background-color: #eeeeee;
-  color: #000;
-
-}
-
-.navbar-container {
-  padding: 1% 15%;
-
-  animation: transitionIn 0.75s;
-}
-
-.navbar-text {
+.credit {
   font-family: 'Pacifico', cursive;
-  font-weight: bold;
-  font-size: 1.8rem;
 }
 
-.navbar-home {
-  text-decoration: none;
+.credit-text {
   color: #000;
-  transition: all 0.5s;
-}
-
-.navbar-home:hover {
-  color: #6D9886;
-}
-
-.navbar-menu {
   text-decoration: none;
-  color: #000;
   padding: 0 1rem;
+  font-size: 1.5rem;
   transition: all 0.5s;
 }
 
-.navbar-menu:hover {
+.credit-text:hover {
   color: #6D9886;
 }
 
@@ -100,6 +74,7 @@ font-family: 'Ubuntu', sans-serif;
 }
 
 .play-container {
+  font-family: 'Ubuntu', sans-serif;
   margin: 3% auto;
   background-color: #eeeeee;
   border-radius: 20px;
@@ -109,21 +84,10 @@ font-family: 'Ubuntu', sans-serif;
 }
 
 .title {
-  font-family: 'Ubuntu', sans-serif;
   font-weight: 900;
-  text-align: center;
   font-size: 1.5rem;
   animation: append-animate 1.25s;
 }
-
-.dice-game-text {
-  font-family: 'Pacifico', cursive;
-  font-size: 1.8rem;
-}
-
-/* .roll-text {
-  display: none;
-} */
 
 .player-one-win {
   display: none;
@@ -285,14 +249,6 @@ font-family: 'Ubuntu', sans-serif;
 .roll:hover {
   background-color: #F7F7F7;
   color: #6D9886
-}
-
-/* Rolling Animation */
-
-@keyframes rolling {
-  50% {
-    transform: rotateX(455deg) rotateY(55deg);
-  }
 }
 
 /* Player */

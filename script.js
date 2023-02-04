@@ -1,24 +1,31 @@
+/*
+  Script for animating and count the score.
+*/
+
 const diceOne = document.querySelector(".dice-one");
 const diceTwo = document.querySelector(".dice-two");
+
 const rollBtn = document.querySelector(".roll");
-const diceGameText = document.querySelector(".dice-game-text");
+
 const rollText = document.querySelector(".roll-text");
-const playerOne = document.querySelector(".player-one-win");
-const playerTwo = document.querySelector(".player-two-win");
 const draw = document.querySelector(".draw");
 const title = document.querySelector(".title");
 const rolling = document.querySelector(".rolling");
 const score = document.querySelector(".score");
 
-var p1 = 0;
-var p2 = 0;
-var ans = 0;
+const playerOne = document.querySelector(".player-one-win");
+const playerTwo = document.querySelector(".player-two-win");
 
-var scoreP1 = 0;
-var scoreP2 = 0;
+let p1 = 0;
+let p2 = 0;
+let ans = 0;
 
-var min = 250;
-var max = 500;
+let scoreP1 = 0;
+let scoreP2 = 0;
+
+// You can change number of how the dice rolling here.
+let min = 250;
+let max = 500;
 
 rollBtn.disabled = true;
 rollBtn.addEventListener("click", roll);
@@ -34,16 +41,16 @@ function roll() {
     playerTwo.style.display = "none";
   else if (draw.style.display === "block") draw.style.display = "none";
 
-  var xRandOne = getRandom(max, min);
-  var yRandOne = getRandom(max, min);
+  let xRandOne = getRandom(max, min);
+  let yRandOne = getRandom(max, min);
 
   diceOne.style.webkitTransform =
     "rotateX(" + xRandOne + "deg) rotateY(" + yRandOne + "deg)";
   diceOne.style.transform =
     "rotateX(" + xRandOne + "deg) rotateY(" + yRandOne + "deg)";
 
-  var xRandTwo = getRandom(max, min);
-  var yRandTwo = getRandom(max, min);
+  let xRandTwo = getRandom(max, min);
+  let yRandTwo = getRandom(max, min);
 
   diceTwo.style.webkitTransform =
     "rotateX(" + xRandTwo + "deg) rotateY(" + yRandTwo + "deg)";
