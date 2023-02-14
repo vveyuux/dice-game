@@ -82,11 +82,11 @@ function roll() {
   }, "7000");
 }
 
-function getRandom(max, min) {
+const getRandom = (max, min) => {
   return (Math.floor(Math.random() * (max - min)) + min) * 90;
-}
+};
 
-function checkAnswer(xRand, yRand) {
+const checkAnswer = (xRand, yRand) => {
   if (xRand === 0 && yRand === 0) ans = 1;
   else if (xRand === 90 && yRand === 0) ans = 3;
   else if (xRand === 180 && yRand === 0) ans = 6;
@@ -104,7 +104,7 @@ function checkAnswer(xRand, yRand) {
   else if (xRand === 180 && yRand === 270) ans = 2;
   else if (xRand === 270 && yRand === 270) ans = 4;
   return ans;
-}
+};
 
 setTimeout(() => {
   rollBtn.disabled = false;
